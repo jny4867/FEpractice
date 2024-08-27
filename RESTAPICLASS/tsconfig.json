@@ -7,8 +7,12 @@
     "moduleResolution": "node",
     "outDir": "./dist",
     "strictNullChecks": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "lib": ["es5", "dom"]
   },
   "include": ["src"],
   "exclude": ["node_modules"]
 }
+
+// 중요함!! 기억해라

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 등록</title>
+    <link rel="stylesheet" href="../public/styles/main.css">
+</head>
+<body>
+    <div id="wrap">
+    <div class="register-container">
+        <h2>회원 등록</h2>
+        <form id= "customerForm" action="/api/v1/customers" method="POST">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+
+            <label for="address">주소</label>
+            <input type="text" id="address" name="address" placeholder="주소를 입력하세요" required>
+
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required>
+
+            <div id="btn_wrap">
+            <button type="submit">등록</button>
+            </div>
+        </form>
+        <div id="notify" style="display: none; color: rgb(118, 211, 225); margin-top: 20px;"></div>
+    </div>
+    </div>
+    <script src="../main.ts" defer></script>
+</body>
+</html>
