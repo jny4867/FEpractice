@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별 찍기</title>
+    <script>
+        // 1. 가로로 별 다섯개 출력
+        for (let i = 0; i < 5; i++) {
+            document.write('*');
+        }
+        document.write('<br><br>'); // 구분
+
+        // 2. 세로로 별 다섯개 출력
+        for (let i = 0; i < 5; i++) {
+            document.write('*<br>'); // 별 하나 출력 후 줄 바꿈
+        }
+        document.write('<br>'); // 줄 바꿈 추가
+
+        // 3. 5x5 정사각형 별 출력
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                document.write('*');
+            }
+            document.write('<br>'); // 각 줄이 끝날 때 줄 바꿈
+        }
+        document.write('<br><br>'); // 구분
+
+        // 4. 왼쪽으로 붙은 직각삼각형 출력
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j <= i; j++) {
+                document.write('*');
+            }
+            document.write('<br>'); // 각 줄이 끝날 때 줄 바꿈
+        }
+        document.write('<br>'); // 구분
+
+        // 5. 왼쪽으로 붙은 역직각삼각형 출력
+        for (let i = 0; i < 5; i++) {
+            for (let j = 5; j > i; j--) {
+                document.write('*');
+            }
+            document.write('<br>'); // 각 줄이 끝날 때 줄 바꿈
+        }
+        document.write('<br>'); // 구분
+
+        // 6. 오른쪽으로 붙은 직각삼각형 출력
+        for (let i = 0; i < 5; i++) {
+            for (let j = 4; j > i; j--) {
+                document.write('&nbsp'); // 공백을 추가하여 오른쪽으로 밀어내기
+            }
+            for (let j = 0; j <= i; j++) {
+                document.write('*');
+            }
+            document.write('<br>'); // 각 줄이 끝날 때 줄 바꿈
+        }
+        document.write('<br>'); // 구분
+
+        // 7. 오른쪽으로 붙은 역직각삼각형 출력
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j <= i; j++) {
+                document.write('&nbsp'); // 공백 추가하여 오른쪽으로 밀어내기
+            }
+            for (let j = 5; j > i; j--) {
+                document.write('*');
+            }
+            document.write('<br>'); // 각 줄이 끝날 때 줄 바꿈
+        }
+        document.write('<br>'); // 구분
+
+        // 8. 피라미드 출력
+        for (let i = 0; i < 5; i++) {
+            for (let j = 4; j > i; j--) {
+                document.write('&nbsp'); // 공백을 추가하여 가운데 정렬
+            }
+            for (let j = 0; j <= i; j++) {
+                document.write('*');
+            }
+            for (let j = 1; j <= i; j++) {
+                document.write('*');
+            }
+            document.write('<br>'); // 각 줄이 끝날 때 줄 바꿈
+        }
+        document.write('<br>'); // 구분
+
+        // 9. 역 피라미드 출력
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < i; j++) {
+                document.write('&nbsp'); // 공백을 추가하여 가운데 정렬
+            }
+            for (let j = 5; j > i; j--) {
+                document.write('*');
+            }
+            for (let j = 4; j > i; j--) {
+                document.write('*');
+            }
+            document.write('<br>'); // 각 줄이 끝날 때 줄 바꿈
+        }
+        document.write('<br>'); // 구분
+
+        // 10. 마름모 출력
+        for (let i = 0; i < 5; i++) { // 8.피라미드와 동일
+            for (let j = 4; j > i; j--) {
+                document.write('&nbsp');
+            }
+            for (let j = 0; j <= i; j++) {
+                document.write('*');
+            }
+            for (let j = 1; j <= i; j++) {
+                document.write('*');
+            }
+            document.write('<br>'); // 각 줄이 끝날 때 줄 바꿈
+        }
+        for (let i = 1; i < 5; i++) {  // 9.역 피라미드와 동일
+            //제일 윗 줄은 출력되지 않게 하기 위해 i가 1부터 시작
+            for (let j = 0; j <= i; j++) {
+                document.write('&nbsp'); // 공백 추가
+            }
+            for (let j = 5; j > i; j--) {
+                document.write('*');
+            }
+            for (let j = 4; j > i; j--) {
+                document.write('*');
+            }
+            document.write('<br>'); // 각 줄이 끝날 때 줄 바꿈
+        }
+        document.write('<br>'); // 구분
+
+        // 11. 모래시계 출력
+        for (let i = 0; i < 5; i++) { // 9.역 피라미드
+            for (let j = 0; j < i; j++) {
+                document.write('&nbsp'); // 공백 추가
+            }
+            for (let j = 5; j > i; j--) {
+                document.write('*');
+            }
+            for (let j = 4; j > i; j--) {
+                document.write('*');
+            }
+            document.write('<br>'); // 각 줄이 끝날 때 줄 바꿈
+        }
+        for (let i = 1; i < 5; i++) {  // 8.피라미드와 동일
+            //제일 윗 줄은 출력되지 않게 하기 위해 i가 1부터 시작
+            for (let j = 3; j >= i; j--) {
+                document.write('&nbsp'); // 공백 추가
+            }
+            for (let j = 0; j <= i; j++) {
+                document.write('*');
+            }
+            for (let j = 1; j <= i; j++) {
+                document.write('*');
+            }
+            document.write('<br>'); // 각 줄이 끝날 때 줄 바꿈
+        }
+        document.write('<br>'); // 구분을 위해 줄 바꿈
+
+        // 12. 가운데가 비어있는 모양 출력
+        for (let i = 0; i < 5; i++) { // 8. 피라미드 응용
+            for (let j = 8; j > i; j--) {
+                document.write('&nbsp'); // 공백 추가
+            }
+            for (let j = 0; j <= i; j++) {
+                document.write('*');
+            }
+            for (let j = 1; j <= i; j++) {
+                document.write('*');
+            }
+            document.write('<br>'); // 각 줄이 끝날 때 줄 바꿈
+        }
+        // 두 개의 피라미드
+        for (let i = 0; i < 5; i++) {
+            for (let j = 4; j > i; j--) {
+                document.write('&nbsp');
+            }
+            for (let j = 0; j <= i; j++) {
+                document.write('*'); 
+            }
+            for (let j = 1; j <= i; j++) {
+                document.write('*'); //여기까지는 8.피라미드와 동일
+            }
+            for (let j = 9; j > 2 * i; j--) {
+                document.write('&nbsp'); // 피라미드 사이 거리 두기
+            }
+            for (let j = 0; j <= i; j++) {
+                document.write('*');
+            }
+            for (let j = 1; j <= i; j++) {
+                document.write('*');
+            }
+            document.write('<br>'); // 각 줄이 끝날 때 줄 바꿈
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

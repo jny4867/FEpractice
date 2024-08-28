@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1"> <!--테두리 숫자는 굵기-->
+        <thread> <!--제목영역-->
+        <tr>
+            <th></th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+        </tr>
+      </thread>
+      <tbody><!--내용영역-->
+        <tr><!--첫번째 줄-->
+            <td>1 class</td>
+            <td rowspan="2">English</td><!--연강일 때 rowspan하고 두번째 줄 요소를 하나 제거하면 됨-->
+            <td>Math</td>
+            <td colspan="3">Science</td><!--옆으로 뚫고 싶으면 colspan-->
+        </tr>
+        <tr><!--두번째 줄-->
+            <td>2 class</td>
+            <td>Math</td>
+            <td>Science</td>
+            <td>History</td>
+            <td>Physics</td>
+        </tr>
+      </tbody>
+    </table>
+</body>
+</html>

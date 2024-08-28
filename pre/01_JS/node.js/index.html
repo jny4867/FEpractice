@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>OpenAPI 샘플(Javascript)</title>
+    <script defer src="main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        #results > div {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        #results img {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+	<!-- <h1>Hello World!</h1>
+	<img src="" alt="">
+	<p id="year"></p>
+	<p id="type"></p>
+	<div id="map" style="width: 200px; height: 200px;"></div>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5atCalBvafPcXJKAzDJeWoBtonfcy7f0&callback=myMap"></script> -->
+	<h1>Movie Search</h1>
+    <input type="text" id="searchInput" placeholder="Enter movie title" />
+    <button id="searchButton">Search</button>
+    <div id="results"></div>
+
+</body>
+</html>

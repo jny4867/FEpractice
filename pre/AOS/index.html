@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AOS</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+</head>
+<style>
+    .item{
+        width: 300px;
+        height: 300px;
+        background-color: orange;
+        margin: 100px auto;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="item" data-aos="fade-up">fade-up</div>
+        <div class="item" data-aos="fade-down" data-aos-anchor-placement="top-center">fade-down</div>
+        <div class="item" data-aos="fade-right" data-aos-offset="'500" data-aos-duration="500" data-aos-easing="ease-in-back">offset</div>
+        <div class="item" data-aos="fade-left">fade-left</div>
+        <div class="item" data-aos="fade-left">fade-left</div>
+        <div class="item" data-aos="fade-down-left">fade-left</div>
+    </div>
+    
+</body>
+</html>

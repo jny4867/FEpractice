@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                 body {
+            display: flex; /* 자식 요소를 플렉스 컨테이너로 설정 */
+            justify-content: center; /* 수평 방향으로 중앙 정렬 */
+            align-items: center; /* 수직 방향으로 중앙 정렬 */
+            height: 100vh; /* 화면 전체 높이를 차지 */
+            background-color: #f0f0f0; /* 배경색 설정 */
+            margin: 0; /* 기본 margin 제거 */
+        }
+        
+        /* 카드 컨테이너의 3D 원근감을 설정 */
+        .cardWrap {
+            perspective: 1000px; 
+            /* 3D 효과를 위한 원근법 설정 (높을수록 더 원근감이 큼) */
+        }
+
+
+        .card {
+            width: 200px;
+            height: 200px;
+            position: relative; /* 자식 요소들을 위한 기준점으로 사용 */
+            transform-style: preserve-3d; /* 자식 요소들이 3D 공간에서 위치하도록 설정 */
+            transition: transform 0.6s; /* 변형 애니메이션 시간을 0.6초로 설정 */
+        }
+
+        .card.flip {
+            transform: rotateY(180deg); 
+        }/* Y축을 기준으로 카드를 180도 회전 */
+
+        /* 카드 앞면과 뒷면 공통 스타일 */
+        .front, .back {
+            position: absolute; /* 부모 요소를 기준으로 절대 위치 설정 */
+            width: 100%; /* 부모 요소의 너비와 동일하게 설정 */
+            height: 100%; /* 부모 요소의 높이와 동일하게 설정 */
+            backface-visibility: hidden; /* 뒤집힐 때 뒷면이 보이지 않도록 설정 */
+            display: flex; /* 자식 요소를 플렉스 컨테이너로 설정 */
+            justify-content: center; /* 자식 요소를 수평 방향으로 중앙 정렬 */
+            align-items: center; /* 자식 요소를 수직 방향으로 중앙 정렬 */
+            font-size: 24px; /* 글자 크기 설정 */
+            color: white; /* 글자 색을 흰색으로 설정 */
+        }
+
+        /* 카드 앞면 스타일 */
+        .front {
+            background-color: #2ecc71; /* 앞면의 배경색을 녹색으로 설정 */
+        }
+
+        /* 카드 뒷면 스타일 */
+        .back {
+            background-color: #e74c3c; /* 뒷면의 배경색을 빨간색으로 설정 */
+            transform: rotateY(180deg); /* 뒷면을 Y축으로 180도 회전시켜 숨김 상태로 만듦 */
+        }
+
+        .item{
+            font-size: 30px;
+            position: fixed;
+            top: 200px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="resizeBox"></div>
+    <div class="container2"></div>
+    <div class="item">카드</div>
+<div class="cardWrap">
+    <div class="card">
+        <div class="front">
+            <h1>앞</h1>
+        </div>
+        <div class="back">
+            <h1>뒤</h1>
+        </div>
+    </div>
+</div>    
+
+<script>
+    // 'card' 클래스를 가진 요소를 선택하여 변수에 저장
+    const card = document.querySelector('.card');
+
+    // 카드 요소에 클릭 이벤트 리스너를 추가
+    card.addEventListener('click', function() {
+        // 카드에 'flip' 클래스를 추가하거나 제거하여 뒤집기 효과를 만듦
+        card.classList.toggle('flip'); // 'flip' 클래스가 있으면 제거, 없으면 추가
+    });
+</script>
+</body>
+</html>

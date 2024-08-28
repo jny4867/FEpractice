@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Basic</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            //HTML 요소에서 document 선택
+            $('h1').hover(function () {
+                //h1 선택 후 hover 핸들러 선택
+                $(this).css({
+                    background: 'red',
+                    color: 'white'
+                }); //hover된 경우의 색상 선택
+            }, function () {
+                $(this).css({
+                    background: '',
+                    color: '' //hover 해제되면 색상 삭제
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Click</h1>
+</body>
+</html>

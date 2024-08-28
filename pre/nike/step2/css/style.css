@@ -1,0 +1,27 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Play);
+@import url(http://fonts.googleapis.com/css?family=Monoton);
+
+/*    Reset CSS  */
+* { margin:0;  padding:0; }
+ol,ul { list-style: none; }
+a { outline:0; text-decoration:none; color:#bbb;}
+img { border:0;}
+body { position:fixed;  width:100%; height:100%; background:#111;}
+
+
+/* 배경동영상 */
+.vid { width:100%; height:100%; position:fixed; top:-60px; left:0px; opacity:0.9; }/*배경 동영상의 60픽셀이 위로 올라갔다, opacity 0.9: 배경의 10퍼센트는 검정(background)*/
+.vid video { width:100%; min-width:1600px; }
+/*화면이 작아도 최소 해상도 가로 1600을 유지해라*/
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Basic</title>
+    <style>
+        #box {
+            width: 100px; height: 100px;
+            background-color: red;
+        }
+        
+        #box.hover {
+            background-color: blue;
+            border-radius: 50px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            //DOM이 완전히 로드 되었을 때 실행할 코드 정의
+            $('#box').hover(function () { 
+                //HTML 요소 중 id가 box인 요소 선택
+                //hover 핸들러 설정
+                $('#box').addClass('hover');
+                //마우스가 올라가면 hover 클래스 생성
+            }, function () {
+                $('#box').removeClass('hover'); 
+                //마우스가 벗어나면 hover 클래스 제거
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

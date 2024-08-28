@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Masonry</title>
+    <style>
+        /* 모든 요소의 기본 여백과 패딩을 제거합니다. */
+        * { margin: 0; padding: 0; }
+
+        /* .box 클래스에 대한 스타일을 정의합니다. */
+        .box {
+            background: black;   /* 배경색을 검정으로 설정합니다. */
+            margin: 5px;         /* 각 박스의 주변에 5px의 여백을 추가합니다. */
+        }
+    </style>
+    <!-- jQuery 라이브러리 로드 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <!-- Masonry 플러그인 로드 -->
+    <script src="https://masonry.desandro.com/masonry.pkgd.min.js"></script>
+    <script>
+        // 문서가 준비되면 실행할 함수
+        $(document).ready(function () {
+            // 문서 객체를 생성합니다.
+            for (let i = 0; i < 100; i++) {
+                // 새로운 <div> 요소를 생성하고 클래스와 스타일을 설정합니다.
+                $('<div></div>').addClass('box').css({
+                    width: 100,  // 너비를 100px로 설정합니다.
+                    height: Math.floor(Math.random() * 100) + 50  // 높이를 50px에서 149px 사이의 랜덤 값으로 설정합니다.
+                }).appendTo('body');  // 생성된 <div> 요소를 <body> 요소에 추가합니다.
+            }
+
+            // Masonry 플러그인을 적용합니다.
+            $('body').masonry({
+                columnWidth: 110  // 각 열의 너비를 110px로 설정합니다.
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- body는 비어 있지만, 스크립트에서 박스를 추가합니다. -->
+</body>
+</html>

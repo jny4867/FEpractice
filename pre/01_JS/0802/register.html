@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src = './register.js'></script>
+    <link rel="stylesheet" href="main.css">
+    <style> </style>
+</head>
+<body>
+    <form name = "join">
+        <ul>
+           <h3> 회원가입</h3>
+           <li>
+            <label class = "field" for = "id">아이디</label>
+            <input type = 'text' class = 'input-box' id = 'id' name = 'id'>
+           </li>
+           <li>
+               <label class = "field" for = "email">이메일</label>
+               <input type = 'text' class = 'input-box' id = 'email' name = 'email'>
+           </li>
+           <li>
+               <label class = "field" for = "pw">비밀번호</label>
+               <input type = 'text' class = 'input-box' id = 'pw' name = 'pw'required>
+           </li>
+           <li>
+            <label class = "field" for = "password">비밀번호 확인</label>
+            <input type = 'text' class = 'input-box' id = 'password' name = 'password'>
+            </li>
+            <li>
+                <label class="field">메일링 수신</label>
+                <input type="radio" id="mailingY" name="mailing" value="yes">
+                <label for="mailingY" class="check">예</label>
+                <input type="radio" id="mailingN" name="mailing" value="no">
+                <label for="mailingN" class="check">아니오</label>
+            </li>
+
+            <br>
+            <form name = "buttons">
+               <button>가입하기</button>
+               <button>취소</button>
+            </form>
+       </ul>
+       </form>
+</html> 
+

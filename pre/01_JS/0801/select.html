@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Dynamic Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        fieldset {
+            margin-bottom: 15px;
+            border: none;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form name="testForm">
+            <fieldset>
+                <ul>
+                    <li>
+                        <label for="userName">이름</label>
+                        <input type="text" id="userName" name="userName">
+                    </li>
+                    <li>
+                        <label for="major">전공</label>
+                        <select name="major" id="major">
+                            <option value="">학과 선택</option>
+                            <option value="컴퓨터공학과">컴퓨터공학과</option>
+                            <option value="실용음악과">실용음악과</option>
+                            <option value="수학과">수학과</option>
+                            <option value="불어불문학과">불어불문학과</option>
+                        </select>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>수업</legend>
+                <label><input type="radio" name="subject" value="백엔드">백엔드</label>
+                <label><input type="radio" name="subject" value="프론트엔드">프론트엔드</label>
+                <label><input type="radio" name="subject" value="풀스택">풀스택</label>
+            </fieldset>
+            <fieldset>
+                <legend>시간대</legend>
+                <label><input type="checkbox" name="time" value="아침">아침</label>
+                <label><input type="checkbox" name="time" value="점심">점심</label>
+                <label><input type="checkbox" name="time" value="저녁">저녁</label>
+            </fieldset>
+            <button>제출</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('userName').addEventListener('input', updateResult);
+        document.getElementById('major').addEventListener('change', updateResult);
+        document.querySelectorAll('input[name="subject"]').forEach(input => {
+            input.addEventListener('change', updateResult);
+        });
+        document.querySelectorAll('input[name="time"]').forEach(input => {
+            input.addEventListener('change', updateResult);
+        });
+
+        function updateResult() {
+            const submitBtn = document.getElementById("submitBtn");
+            document.addEventListener("click", function){
+
+                const userName = document.getElementById('userName').value;
+                const majorSelect = document.getElementById('major').value;
+                const seletedMajor = majorSelect.value || "선택되지 않음";
+                const selectSubject = document.querySelector('input[name="subject"]:checked');
+                const subjectValue = selectSubject ? selectSubject.value : "선택되지 않음";
+                const times = Array.from(document.querySelectorAll('input[name="time"]:checked'))
+                .map(input => input.value)
+                .join(', ');
+
+            const resultDiv = document.getElementById('result').innerHTML = `
+                ${userName}</p>
+                전공: ${major}</p>
+                관심 분야: ${subjectValue}</p>
+                시간대: ${times}</p>
+            `;
+
+            }
+        
+        }
+    </script>
+</body>
+</html>

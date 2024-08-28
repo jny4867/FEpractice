@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Basic</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            ////DOM이 완전히 로드 되었을 때 실행할 코드 정의
+            // 이벤트 연결
+            $('h1').click(function () {
+                //HTML 요소 중 h1 선택
+                //클릭 핸들러 선택
+                alert('클릭!');
+                //클릭!이라는 경고창 생성
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Click</h1>
+</body>
+</html>

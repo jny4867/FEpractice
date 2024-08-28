@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Basic</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 스타일 변경 및 이벤트 연결
+            //클릭, 마우스 진입, 마우스 이탈 이벤트 핸들러를 설정한다
+            $('#box').css({
+                width: 100,
+                height: 100,
+                background: 'orange'
+            }).on('click', function () {
+                $(this).css('background', 'red');
+                //box 요소를 클릭했을 때 배경색 변경
+                //this는 현재 이벤트가 발생한 요소를 가리킨다
+            }).on('mouseenter', function () {
+                $(this).css('background', 'blue');
+                //마우스가 box 위에 올라가면 배경색이 blue로 바뀐다
+            }).on('mouseleave', function () {
+                $(this).css('background', 'orange');
+                //마우스가 box 요소를 벗어나면 배경색이 orange로 변경된다
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

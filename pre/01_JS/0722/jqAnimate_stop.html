@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Basic</title>
+    <!-- jQuery 라이브러리 로드 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        // DOM이 완전히 로드되었을 때 실행할 함수
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            let clearQueue = false; // 애니메이션 대기열을 지울지 여부를 결정하는 변수
+            let goToEnd = false; // 애니메이션을 끝까지 진행할지 여부를 결정하는 변수
+            
+            // 'clearQueue' 체크박스 변경 이벤트를 연결합니다.
+            $('#clearQueue').change(function () {
+                clearQueue = $(this).prop('checked'); // 체크 여부를 변수에 저장
+            });
+
+            // 'goToEnd' 체크박스 변경 이벤트를 연결합니다.
+            $('#goToEnd').change(function () {
+                goToEnd = $(this).prop('checked'); // 체크 여부를 변수에 저장
+            });
+
+            // 'Stop' 버튼 클릭 이벤트를 연결합니다.
+            $('#stopButton').click(function () {
+                // 'clearQueue'와 'goToEnd' 변수에 따라 애니메이션을 멈춥니다.
+                $('#box').stop(clearQueue, goToEnd);
+            });
+
+            // 'box' 요소의 초기 스타일을 설정합니다.
+            $('#box').css({
+                width: 100, // 너비 100px
+                height: 100, // 높이 100px
+                background: 'red' // 배경색 빨강
+            });
+
+            // 타이머를 설정하여 주기적으로 애니메이션을 실행합니다.
+            setInterval(function () {
+                // 'box' 요소의 너비를 200px로 애니메이션
+                $('#box').animate({
+                    width: 200
+                }, 1000) // 1초 동안 애니메이션 실행
+                .delay(1000) // 1초 동안 대기
+                // 'box' 요소의 너비와 높이를 100px로 애니메이션
+                .animate({
+                    width: 100,
+                    height: 100
+                }, 1000); // 1초 동안 애니메이션 실행
+            }, 3000); // 3초마다 애니메이션 실행
+        });
+    </script>
+</head>
+<body>
+    <!-- 입력 양식 -->
+    <label>clearQueue</label>
+    <input id="clearQueue" type="checkbox">
+    <br>
+    <label>goToEnd</label>
+    <input id="goToEnd" type="checkbox">
+    <br>
+    <button id="stopButton">Stop</button>
+    <!-- 애니메이션을 실행할 요소 -->
+    <div id="box"></div>
+</body>
+</html>
