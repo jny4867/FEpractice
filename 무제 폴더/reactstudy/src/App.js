@@ -13,8 +13,6 @@ import UserPw from './components/UserPw';
 // import ChangeProps from './components/changeprops';
 function App() {
 
-
-
   //문제 1
   // const numbers = [5, 10, 15, 20, 25, 30];
 
@@ -29,10 +27,6 @@ function App() {
   //     배열의 남은 요소: {numbers.join(", ")}
   //   </div>
   // )
-
-
-
-
 
   //문제2
 // 검색어와 검색 결과를 저장하기 위한 두 개의 상태를 선언합니다.
@@ -92,10 +86,6 @@ return (
   </div>
 );
 
-
-
-
-//문제3
 
 
 
