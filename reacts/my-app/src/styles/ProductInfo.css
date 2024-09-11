@@ -1,0 +1,22 @@
+.pInfo-container{
+    display: 'flex';
+    flex-direction: column;
+    justify-content: 'center';
+    align-items: center;
+    width: '100%';
+    height: 'auto';
+}
+
+.pInfo-inner{
+    gap: '30px';
+}
+
+.pInfo-inner-inner{
+    display:'flex';
+    flex-direction: 'column';
+    gap:'20px';
+}
+
+#cart{
+    width: '200px';
+}
